@@ -3,7 +3,9 @@ const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const cPassword = document.getElementById("cPassword");
+const cPassword = document.getElementById("cPassword"); 
+// You made a mistake in the id name
+// You were using Cpassword instead of cPassword
 
 form.addEventListener("click", (e) => {
   e.preventDefault();
@@ -26,7 +28,7 @@ function checkInputs() {
   }
   
   if (lastNameValue === "") {
-    setErrorFor(lastName, "First Name cannot be blank");
+    setErrorFor(lastName, "Second Name cannot be blank");
   } else {
     setSuccessFor(lastName);
   }
@@ -57,8 +59,8 @@ function checkInputs() {
 function setErrorFor(input, message) {
   const formControl = input.parentElement;
   const small = formControl.querySelector("small");
-  formControl.className = "form-control error";
   small.innerText = message;
+  formControl.className = "form-control error";
 }
 
 function setSuccessFor(input) {
@@ -66,8 +68,10 @@ function setSuccessFor(input) {
   formControl.className = "form-control success";
 }
 
+// Save the regex validator in a variable so that it does not cause error in the function
+let regexText = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 function isEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
+  return regexText.test(email);
 }
+
