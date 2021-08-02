@@ -76,19 +76,24 @@ a{
 	top: 35px;
 	right: 10px;
 }
-
-.form-control.success i.fa-check-circle {
-	color: #2ecc71;
-	visibility: visible;
+/* You made a mistake with the classes. I have fixed it */
+.form-control.success input {
+	border-color: #2ecc71;
 }
 
-.form-control.error i.fa-exclamation-circle {
-	color: #e74c3c;
-	visibility: visible;
+.form-control.error input {
+	border-color: #e74c3c;
+}
+.form-control.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+.form-control.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
 }
 
 .form-control small{
-    color: red;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -96,6 +101,7 @@ a{
 }
 
 .form-control.error small {
+    color: red;
 	visibility: visible;
 }
 
